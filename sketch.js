@@ -61,17 +61,23 @@ function draw(){
     log4.display();
     log5.display();
 
-    bird.display();
+    
     platform.display();
     //log6.display();
-    slingshot.display();    
+    slingshot.display();   
+    bird.display();
 }
 
 function mouseDragged(){
     Matter.Body.setPosition(bird.body, {x: mouseX , y: mouseY});
 }
 
-
 function mouseReleased(){
     slingshot.fly();
+}
+
+function keyPressed() {
+    if(keyCode === 32) {
+        slingshot.attach(bird.body);
+    }
 }
